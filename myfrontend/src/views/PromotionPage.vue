@@ -46,7 +46,7 @@ export default {
       return {
         promotion: [],
         user: null ,
-        apiURL:"http://204.236.202.79:3000"
+        apiURL:"http://3.215.49.113:3000"
         };
     },mounted() {
         this.getprofileDetail()
@@ -54,7 +54,7 @@ export default {
     },
     methods: {
     getprofileDetail() {
-        axios.get('http://204.236.202.79:3000/user/promotion')
+        axios.get('http://3.215.49.113:3000/user/promotion')
         .then((response) => {
           console.log(response)
           this.promotion = response.data.promotion
@@ -72,7 +72,7 @@ export default {
         },
     getUser () {
       const token = localStorage.getItem('token')
-      axios.get('http://204.236.202.79:3000/user/me', { headers: {Authorization: 'Bearer ' + token} }).then(res => {
+      axios.get('http://3.215.49.113:3000/user/me', { headers: {Authorization: 'Bearer ' + token} }).then(res => {
         this.user = res.data
         // this.$router.push({path: '/'})
         // this.$router.push('/');

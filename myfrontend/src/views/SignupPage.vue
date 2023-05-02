@@ -135,7 +135,7 @@ export default {
         };
 
         axios
-          .post("http://204.236.202.79:3000/user/signup", data)
+          .post("http://3.215.49.113:3000/user/signup", data)
           .then((res) => {
             alert("Sign up Success");
             location.reload()

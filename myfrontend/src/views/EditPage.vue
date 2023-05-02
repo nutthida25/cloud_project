@@ -86,7 +86,7 @@ export default {
         add4: '',
         add5: '',
         add6: ''
-        // apiURL:"http://204.236.202.79:3000"
+        // apiURL:"http://3.215.49.113:3000"
         };
     },mounted() {
         this.getprofileDetail()
@@ -94,7 +94,7 @@ export default {
     },
     methods: {
     getprofileDetail() {
-        axios.get('http://204.236.202.79:3000/user/promotion')
+        axios.get('http://3.215.49.113:3000/user/promotion')
         .then((response) => {
           console.log(response)
           this.promotion = response.data.promotion
@@ -119,7 +119,7 @@ export default {
     },
     saveEdit(pmt_id){
       axios
-        .post(`http://204.236.202.79:3000/user/edit/${pmt_id}`, {
+        .post(`http://3.215.49.113:3000/user/edit/${pmt_id}`, {
           name: this.edit2,
           priceKid1: this.edit3,
           priceKid2: this.edit4,
@@ -150,7 +150,7 @@ export default {
       const result = confirm(`Are you sure you want to delete it?`);
       if (result){
         axios
-        .delete(`http://204.236.202.79:3000/user/del/${pmt_id}`)
+        .delete(`http://3.215.49.113:3000/user/del/${pmt_id}`)
         .then((response) => {
          console.log(response)
           location.reload()
@@ -162,7 +162,7 @@ export default {
     },
     add(){
        axios
-        .post(`http://204.236.202.79:3000/user/add/`, {
+        .post(`http://3.215.49.113:3000/user/add/`, {
           name: this.add1,
           priceKid1: this.add2,
           priceKid2: this.add3,

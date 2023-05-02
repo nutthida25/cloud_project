@@ -140,7 +140,7 @@ export default {
       total: 0
       // show_modal: false,
       // startDate : new Date()
-      // apiURL:"http://204.236.202.79:3000"
+      // apiURL:"http://3.215.49.113:3000"
     };
   },
   mounted() {
@@ -150,7 +150,7 @@ export default {
   methods: {
     getprofileDetail(PMT) {
       axios
-        .get("http://204.236.202.79:3000/user/promotion")
+        .get("http://3.215.49.113:3000/user/promotion")
         .then((response) => {
           console.log(response);
           this.promotion = response.data.promotion[PMT];

@@ -68,7 +68,7 @@ export default {
     return {
       myCart: [],
       total: 0,
-      apiURL: "http://localhost:3000",
+      apiURL: "http://3.215.49.113:3000",
       filter1: [],
       check: false,
     };

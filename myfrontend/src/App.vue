@@ -91,7 +91,7 @@ import axios from 'axios'
       data () {
         return {
           user: null ,
-        apiURL:"http://localhost:3000",
+        apiURL:"http://3.215.49.113:3000",
         }
       },
       mounted () {
@@ -107,7 +107,7 @@ import axios from 'axios'
         },
         getUser () {
           const token = localStorage.getItem('token')
-          axios.get('http://localhost:3000/user/me', { headers: {Authorization: 'Bearer ' + token} }).then(res => {
+          axios.get('http://3.215.49.113:3000/user/me', { headers: {Authorization: 'Bearer ' + token} }).then(res => {
             this.user = res.data
             // this.$router.push({path: '/'})
             this.$router.push('/');
