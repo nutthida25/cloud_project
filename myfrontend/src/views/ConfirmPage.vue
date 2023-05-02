@@ -86,7 +86,8 @@ export default {
         user: [],
         total: 0,
          images: '',
-         bank_name: ''
+         bank_name: '',
+         time: ""
       }
     }, mounted () {
         this.onAuthChange()
@@ -105,7 +106,6 @@ export default {
             this.user = res.data
             // this.$router.push({path: '/'})
             // this.$router.push('/');
-            
            this.total = JSON.parse(localStorage.getItem("total"));
           //  console.log(this.total)
           })
@@ -135,10 +135,12 @@ export default {
           formData.append("bank_name", this.bank_name);
           formData.append("user_id", this.user.user_id);
           formData.append("myImage", this.images);
+          // formData.append("order_date", this.time);
           axios
             .post("http://3.215.49.113:3000/user/confimepayment", formData)
             .then((res) => {
               console.log(res)
+              console.log('เข้าแล้วนะ')
               this.$router.push('/user/finish');
               // this.mangedata();
               // this.isAddPromoModal = false;

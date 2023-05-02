@@ -12,7 +12,7 @@
                         <div class="ml-6">
                             <p>รหัสผู้ซื้อ: {{item.user_id}}</p>
                             <p>รวมการสั่งซื้อ: ฿{{item.order_price}}</p>
-                            <p>วันจองบัตรเข้าชม: {{item.order_date}}</p>
+                            <p>วันชำระเงิน: {{ tolocaldate(item.order_date) }}</p>
                         </div>
                         
                     </div>
@@ -28,7 +28,8 @@ export default {
   data() {
     return {
       order: [],
-      user: []
+      user: [],
+      time: ""
     };
   },
   mounted() {
@@ -37,6 +38,10 @@ export default {
     // this.onAuthChange()
   },
   methods: {
+    tolocaldate(datetime){
+      const dt = new Date(datetime)
+      return dt.toLocaleDateString('en-ES')+" "+ dt.toLocaleTimeString('th-TH')
+    },
     getOrderDetail(id) {
       axios
         .get("http://3.215.49.113:3000/user/order/finish/"+id)

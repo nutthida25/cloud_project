@@ -11,7 +11,7 @@
                     <p class="subtitle has-text-centered mb-3 has-text-white">
                         Log in to Aquarium
                     </p>
-                    <form class="p-5 ml-5 mr-5 mt-5 mb-3 box is-rounded is-transparent" style="background-color: #8EB5C3;">
+                    <form class="p-5 ml-5 mr-5 mt-5 mb-3 box is-rounded is-transparent" style="background-color: #8EB5C3;" @submit.prevent="submit">
                         <div class="field">
                             <label class="label has-text-white">Username</label>
                             <div class="control has-icons-left has-icons-right">
@@ -30,10 +30,10 @@
                                 </span>
                             </div>
                         </div>
-                        <router-link to="/" v-if="user">
-                            <button class="button is-link is-rounded is-fullwidth" @click="submit">Log in</button>
-                        </router-link>
-                        <button v-else class="button is-link is-rounded is-fullwidth" @click="submit">Log in</button>
+                        <!-- <router-link to="/" v-if="user"> -->
+                            <button type="submit" class="button is-link is-rounded is-fullwidth">Log in</button>
+                        <!-- </router-link>
+                        <button v-else class="button is-link is-rounded is-fullwidth" @click="submit">Log in</button> -->
                     </form>
                 </div>
             </section>

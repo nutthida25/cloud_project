@@ -199,27 +199,13 @@ export default {
       }
     },
     Toconfirm(){
-      // let products = {
-      //   pic: this.promotion.file_path,
-      //   ticket: this.ticket,
-      //   myDate: this.myDate,
-      //   price: this.price,
-      //   quantity: this.quantity,
-      //   nameOfticket: this.promotion.pmt_name,
-      //   checked: false,
-      // };
-      // if(this.myDate == '' || this.ticket == ''){
-      //     alert("Please choose date or ticket type.")
-      // }
-      // else{
-      //     var test = JSON.parse(localStorage.getItem("myCart"));
-      //     console.log(JSON.parse(localStorage.getItem("myCart")));
-      //     console.log(test);
-      //     test.ticket.push(products);
-      //     console.log(test);
-      //     localStorage.setItem("myCart", JSON.stringify(test));
-      //     // window.localStorage.clear();
-      // }
+
+   
+        
+      // myDate: this.myDate,
+       
+      
+      localStorage.setItem("myDate", JSON.stringify(this.myDate))
       this.total = this.price * this.quantity
       localStorage.setItem("total", JSON.stringify(this.total))
     }

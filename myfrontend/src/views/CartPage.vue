@@ -25,7 +25,7 @@
           <p class="has-text-black is-size-5">{{ item.nameOfticket }}</p>
           <p>{{ item.price }}฿</p>
           <p>{{ item.ticket }}</p>
-          <p>วันเข้าชม {{ item.myDate }} {{index}}</p>
+          <p>วันเข้าชม {{ item.myDate }}</p>
             
         </div>
         <!-- <div> -->
