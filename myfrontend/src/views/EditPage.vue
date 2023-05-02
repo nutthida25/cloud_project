@@ -139,7 +139,7 @@ export default {
           console.log("response" + response)
           console.log("1223423423")
           // this.$router.push('/user/promotion');
-          // location.reload()
+          // this.getprofileDetail()
         })
         .catch((err) => {
           this.error = err.response.data.message;
@@ -153,7 +153,7 @@ export default {
         .delete(`http://3.215.49.113:3000/user/del/${pmt_id}`)
         .then((response) => {
          console.log(response)
-          location.reload()
+          this.getprofileDetail()
         })
         .catch((error) => {
           alert(error.response.data.message)
@@ -171,8 +171,14 @@ export default {
           path: this.add6
         })
         .then((response) => {
-          location.reload()
+          this.getprofileDetail()
           console.log(response)
+          this.add1 = ''
+          this.add2 = ''
+          this.add3 = ''
+          this.add4 = ''
+          this.add5 = ''
+          this.add6 = ''
         })
         .catch((err) => {
           this.error = err.response.data.message;

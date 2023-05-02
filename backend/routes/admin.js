@@ -47,7 +47,7 @@ router.post('/user/add/', async function(req, res, next){
     try{
         const [rows1, fields1] = await conn.query(
             'INSERT INTO `promotion` (`pmt_name`, `price_normal_kid`, `price_pmt_kid`, `price_normal_adult`, `price_pmt_adult`, `file_path`) VALUES (?, ?, ?, ?, ?, ?)', 
-            [req.body.name, req.body.priceKid1, req.body.priceKid2, req.body.priceAdult1, req.body.priceAdult2, req.body.file_path]
+            [req.body.name, req.body.priceKid1, req.body.priceKid2, req.body.priceAdult1, req.body.priceAdult2, req.body.path]
         )
         const [rows2, fields2] = await conn.query(
             'SELECT * FROM `promotion` WHERE `promotion_id` = ?', 
