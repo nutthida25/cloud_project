@@ -78,7 +78,7 @@ export default {
     data() {
       return {
         user: [],
-        apiURL:"http://localhost:3000",
+        apiURL:"http://204.236.202.79:3000",
         show: false,
         oldPW: '',
         password: ''
@@ -90,7 +90,7 @@ export default {
     methods: {
     getprofileDetail(ProfileId) {
         console.log(ProfileId+"gggg")
-        axios.get('http://localhost:3000/user/profileMe/'+ProfileId)
+        axios.get('http://204.236.202.79:3000/user/profileMe/'+ProfileId)
         .then((response) => {
             // console.log(response)
           this.user = response.data.user[0];
@@ -116,7 +116,7 @@ export default {
 
         if (!this.$v.$invalid) {
         
-            axios.post('http://localhost:3000/user/change/'+pw_id, {
+            axios.post('http://204.236.202.79:3000/user/change/'+pw_id, {
                 oldpw: this.oldPW,
                 newpw: this.password
             })

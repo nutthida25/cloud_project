@@ -39,7 +39,7 @@ export default {
   methods: {
     getOrderDetail(id) {
       axios
-        .get("http://localhost:3000/user/order/finish/"+id)
+        .get("http://204.236.202.79:3000/user/order/finish/"+id)
         .then((response) => {
           console.log(response);
           this.order = response.data.order;
@@ -57,7 +57,7 @@ export default {
         },
       getUser () {
           const token = localStorage.getItem('token')
-          axios.get('http://localhost:3000/user/me', { headers: {Authorization: 'Bearer ' + token} }).then(res => {
+          axios.get('http://204.236.202.79:3000/user/me', { headers: {Authorization: 'Bearer ' + token} }).then(res => {
             this.user = res.data
             // this.$router.push({path: '/'})
             this.getOrderDetail(this.user.user_id)

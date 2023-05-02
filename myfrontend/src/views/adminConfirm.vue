@@ -50,7 +50,7 @@ export default {
   methods: {
     getOrderDetail() {
       axios
-        .get("http://localhost:3000/user/order")
+        .get("http://204.236.202.79:3000/user/order")
         .then((response) => {
           console.log(response);
           this.order = response.data.order;
@@ -60,7 +60,7 @@ export default {
         });
     },confirm(orderId){
          axios
-        .post(`http://localhost:3000/user/orderConfirm/${orderId}`, {
+        .post(`http://204.236.202.79:3000/user/orderConfirm/${orderId}`, {
           order_status: 'confirm' 
         })
         .then((response) => {
@@ -72,7 +72,7 @@ export default {
         });
     },cancel(orderId){
          axios
-        .post(`http://localhost:3000/user/orderCancel/${orderId}`, {
+        .post(`http://204.236.202.79:3000/user/orderCancel/${orderId}`, {
           order_status: 'cancel' 
         })
         .then((response) => {

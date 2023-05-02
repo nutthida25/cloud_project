@@ -57,7 +57,7 @@ import axios from 'axios'
             username: this.username,
             password: this.password
         }
-        axios.post('http://localhost:3000/user/login/', data)
+        axios.post('http://204.236.202.79:3000/user/login/', data)
             .then(res => {
             const token = res.data.token                                
             // alert(res.data.token)
