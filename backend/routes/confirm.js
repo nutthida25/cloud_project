@@ -41,8 +41,8 @@ try {
     //     'INSERT INTO order (order_status, order_price, user_id, order_img) VALUES (?, ?, ?, ?)', 
     //     [req.body.order_status, req.body.order_price, req.body.user_id, "/"+req.file.path.substring(7).replace(/\\/g, "/")] );
         if (file){
-            const [row1, columns1] = await conn.query('INSERT INTO `order`(`order_status`, `order_date`, `order_price`, `user_id`) VALUES(?, ?, ?)',
-            [req.body.order_status, req.body.order_date, req.body.order_price, req.body.user_id])
+            const [row1, columns1] = await conn.query('INSERT INTO `order`(`order_status`, `order_price`, `user_id`) VALUES(?, ?, ?)',
+            [req.body.order_status,  req.body.order_price, req.body.user_id])
             // res.json(row1);
             console.log(row1.insertId)
             const [row2, columns2] = await conn.query('INSERT INTO `payment`(`banking_name`, `total_price`, `payment_img`, `order_id`) VALUES(?, ?, ?, ?)',

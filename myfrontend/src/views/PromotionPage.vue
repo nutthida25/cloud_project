@@ -16,8 +16,11 @@
 
     <div class="card" v-for="item in promotion" :key=item.promotion_id>
       <div class="card-image">
-        <figure class="image is-4by3">
-          <img :src=apiURL+item.file_path alt="Placeholder image">
+        <figure class="image is-4by3" v-if="item.file_path">
+          <img :src=item.file_path alt="Placeholder image">
+        </figure>
+        <figure class="image is-4by3" v-else>
+          <img src="https://cdn.discordapp.com/attachments/1066603623162843227/1103041451782324285/licensed-image.jpg" alt="Placeholder image">
         </figure>
       </div>
       <div class="card-content">
